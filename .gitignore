@@ -1,0 +1,28 @@
+# General
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Backup
+.~*
+
+# Project
+.xls
+.xlsx
+/data/raw
+/data/interim
+/tests/data/raw
+/tests/data/interim
+/tests/data/processed
+!.gitkeep
