@@ -1,8 +1,17 @@
-# Amount of Index ETFs & J-REITs Purchased by Bank of Japan
+# Index ETFs & J-REITs Purchased by Bank of Japan
 
-[CSV Data](data/processed/boj_etf_reit_amount.csv)
+Download [CSV data](data/processed/boj_etf_reit_amount.csv).
 
 <img src="reports/figures/total_amount_purchased_etf_reit.png" width="800px" alt="Figure: time series of total amount of index ETFs & J-REITs purchased by BOJ">
+
+## Data Description
+
+| Name          | Description                                                            | Example    | Has Missing |
+|---------------|------------------------------------------------------------------------|------------|-------------|
+| Date          | Date of purchase                                                       | 2021-01-02 | No          |
+| IndexETF      | Purchases of ETFs other than those mentioned in `SupportiveETF` column | 501.0      | Yes         |
+| SupportiveETF | Purchases of ETFs to support investment in physical and human capital  | 12.0       | Yes         |
+| J-REIT        | Purchases of Japan's real estate investment trust (J-REIT)             | 12.0       | Yes         |
 
 ## DISCLAIMER
 The accuracy of the processed data is not guaranteed. Use at your own risk.
