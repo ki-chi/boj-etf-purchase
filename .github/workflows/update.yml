@@ -1,0 +1,42 @@
+name: Update dataset
+
+on:
+  push:
+  schedule:
+    - cron: 0 9 * * *  # 09:00UTC(18:00JST)
+
+jobs:
+  update:
+    name: Update dataset
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.9.0]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Poetry
+        run: |
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+      - name: Add path for Poetry
+        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+      - name: Install dependencies
+        run: poetry install --no-interaction --no-dev
+      - name: Update date
+        run: make
+      - name: git setting
+        run: |
+          git config --local user.email "k.brilliant@gmail.com"
+          git config --local user.name "ki-chi"
+      - name: Commit files
+        run: |
+          git add .
+          git commit -m "Update data" -a
+          git pull
+          git push origin master
