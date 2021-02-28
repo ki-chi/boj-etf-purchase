@@ -38,13 +38,17 @@ jobs:
         run: |
           make figure
           make clean
-      - name: git setting
+      - name: Git setting
         run: |
           git config --local user.email "k.brilliant@gmail.com"
           git config --local user.name "ki-chi"
       - name: Commit files
         run: |
-          git add .
-          git commit -m "Update data" -a
-          git pull
-          git push origin master
+          git add -N .
+          if ! git diff --exit-code --quiet
+          then
+            git add .
+            git commit -m "Update data" -a
+            git pull
+            git push origin master
+          fi
