@@ -20,9 +20,9 @@ dmypy.json
 # Project
 .xls
 .xlsx
-/data/raw
-/data/interim
-/tests/data/raw
-/tests/data/interim
-/tests/data/processed
+/data/raw/*
+/data/interim/*
+/tests/data/raw/*
+/tests/data/interim/*
+/tests/data/processed/*
 !.gitkeep
