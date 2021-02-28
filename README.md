@@ -12,7 +12,7 @@ Download [CSV data](data/processed/boj_etf_reit_amount.csv).
 | IndexETF      | Purchases of ETFs other than those mentioned in `SupportiveETF` column | 501.0      | Yes         |
 | SupportiveETF | Purchases of ETFs to support investment in physical and human capital  | 12.0       | Yes         |
 | J-REIT        | Purchases of Japan's real estate investment trust (J-REIT)             | 12.0       | Yes         |
-| LendingETF    | New lending of ETFs                                                    | 11         | Yes         |
+| LendingETF    | New lending of ETFs                                                    | 11.0       | Yes         |
 
 
 All amounts are recorded in units of 100 million yen.
