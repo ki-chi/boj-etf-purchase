@@ -17,7 +17,7 @@ OUTPUT_FIG_FILENAME = "total_amount_purchased_etf_reit.png"
 
 class TimeSeriesVisualizer:
     def __init__(self, *, logger=None):
-        self.logger = logging.getLogger(__name__)
+        self.logger = logger or logging.getLogger(__name__)
         self.df = pd.DataFrame()
         self.fig, self.ax = plt.subplots(figsize=(12, 4))
 
@@ -54,6 +54,7 @@ class TimeSeriesVisualizer:
         self._format_df_for_visualization()
         self._make_fig()
         self.fig.savefig(save_loc)
+        self.logger.info(f"Saved: {save_loc}")
 
 
 def main():
