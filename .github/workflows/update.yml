@@ -28,8 +28,16 @@ jobs:
         run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
       - name: Install dependencies
         run: poetry install --no-interaction --no-dev
-      - name: Update date
-        run: make
+      - name: Download
+        run: |
+          make clean
+          make download
+      - name: Arrange
+        run: make arrange
+      - name: Figure
+        run: |
+          make figure
+          make clean
       - name: git setting
         run: |
           git config --local user.email "k.brilliant@gmail.com"
