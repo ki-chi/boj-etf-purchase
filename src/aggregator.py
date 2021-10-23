@@ -26,7 +26,9 @@ class Aggregator:
         "Concatenate the CSV files in `csv_dir`"
         self.logger.info(f"Start to aggregate CSV files in {csv_dir}")
         dfs = [pd.read_csv(p, parse_dates=["Date"]) for p in csv_dir.glob("*.csv")]
-        df = pd.concat(dfs).sort_values("Date")[["Date", "IndexETF", "SupportiveETF", "J-REIT", "LendingETF"]]
+        df = pd.concat(dfs).sort_values("Date")[
+            ["Date", "IndexETF", "SupportiveETF", "J-REIT", "LendingETF"]
+        ]
         return df
 
 

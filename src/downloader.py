@@ -1,6 +1,7 @@
-"""Downloader for the amount of ETF purchase by Bank of Japan
+"""Downloader for the amount of ETF purchase by Bank of Japan.
 
-    * This script downloads Excel files from BoJ website and updates the files in `date/raw`.
+* This script downloads Excel files from BoJ website
+  and updates the files in `date/raw`.
 
 """
 import logging
@@ -15,11 +16,12 @@ from bs4.element import Tag  # type: ignore
 
 
 class Downloader:
-    """The class for downloading the Excel files on BoJ website
+    """The class for downloading the Excel files on BoJ website.
 
     Attributes:
-        save_loc (:obj:`Path`): The path for saving the downloaded files (e.g. `data/raw`)
-        logger (:obj: `Logger`): Logger.
+        save_loc (Path): The path for saving the downloaded files
+                         (e.g. `data/raw`)
+        logger (Logger): Logger.
 
     """
 
@@ -45,7 +47,7 @@ class Downloader:
             existing_zip.extractall(self.save_loc)
 
     def download(self, url) -> None:
-        """Download files from the BoJ website
+        """Download files from the BoJ website.
 
         The method for downloading the files about the amount of purchased ETF.
         It updates the all xlsx files in `self.save_loc` no matter whether the file is updated.
@@ -67,7 +69,7 @@ class Downloader:
         self.logger.info(f"Downloaded {len(target_urls)} files to {self.save_loc}")
 
     def extract(self):
-        """Extract zip files in `self.save_loc`
+        """Extract zip files in `self.save_loc`.
 
         Returns:
             None
