@@ -1,9 +1,10 @@
 name: Update dataset
 
 on:
-  push:
-  schedule:
-    - cron: 0 9 * * *  # 09:00UTC(18:00JST)
+  # Stop update after April 2024.
+  # push:
+  # schedule:
+  #   - cron: 0 9 * * *  # 09:00UTC(18:00JST)
 
 jobs:
   update:

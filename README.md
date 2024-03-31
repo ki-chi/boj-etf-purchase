@@ -1,3 +1,7 @@
+This repository is archived because the Bank of Japan stopped purchasing ETFs and J-REITs after the monetary policy meeting on March 19th, 2024.
+
+---
+
 # Index ETFs & J-REITs Purchased by Bank of Japan
 
 Download [CSV data](data/processed/boj_etf_reit_amount.csv).
